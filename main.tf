@@ -26,11 +26,11 @@ resource "aws_security_group" "allow_all_vpc" {
     cidr_blocks =  ["${data.aws_vpc.selected.cidr_block}"]
     from_port = 0
     to_port = 0
-    ipv6_cidr_blocks=null
-    security_groups=null
-    description=null
-    self=null
-    prefix_list_ids=null
+    ipv6_cidr_blocks = null
+    security_groups = null
+    description = null
+    self = null
+    prefix_list_ids = null
   }
 
   egress = {
@@ -38,11 +38,11 @@ resource "aws_security_group" "allow_all_vpc" {
     cidr_blocks =  ["${data.aws_vpc.selected.cidr_block}"]
     from_port = 0
     to_port = 0
-    ipv6_cidr_blocks=null
-    security_groups=null
-    description=null
-    self=null
-    prefix_list_ids=null
+    ipv6_cidr_blocks = null
+    security_groups = null
+    description = null
+    self = null
+    prefix_list_ids = null
   }
 }
 
