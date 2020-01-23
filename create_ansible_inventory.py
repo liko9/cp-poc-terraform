@@ -29,7 +29,7 @@ zookeeper:
 {%- for broker in broker_dns.value %}
     {{broker}}:
 {%- endfor %}
-broker:
+kafka_broker:
   hosts:
 {%- for broker in broker_dns.value %}
     {{broker}}:
@@ -37,12 +37,12 @@ broker:
         broker:
           id: {{loop.index}}
 {%- endfor %}
-schema-registry:
+schema_registry:
   hosts:
 {%- for worker in worker_dns.value %}
     {{worker}}:
 {%- endfor %}
-control-center:
+control_center:
   hosts:
     {{worker_dns.value[0]}}:
       confluent:
@@ -53,12 +53,12 @@ control-center:
                 {{worker}}:8083
                 {%- if not loop.last %},{% endif %}
                 {%- endfor %}
-connect-distributed:
+kafka_connect:
   hosts:
 {%- for worker in worker_dns.value %}
     {{worker}}:
 {%- endfor %}
-kafka-rest:
+kafka_rest:
   hosts:
 {%- for worker in worker_dns.value %}
     {{worker}}:
